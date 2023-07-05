@@ -17,5 +17,7 @@ def index():
         messages_content = messages.read()
         messages.close()
     ip_addr = re.search(r"DHCPACK on (.*) to " + mac_address, messages_content)
-
-    return f"{ip_addr.group(1)}"
+    if ip_addr:
+        return f"{ip_addr.group(1)}"
+    else:
+        return "None"
