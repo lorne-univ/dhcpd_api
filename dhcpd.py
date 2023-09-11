@@ -10,7 +10,9 @@ app = Flask(__name__)
 print(f"Flask : {__version__}")
 
 
-# Pour lancer le service : flask run --host=0.0.0.0
+# Pour lancer le service :
+# export FLASK_APP=dhcpd
+# flask run --host=0.0.0.0
 # Pour tester : curl -X POST http://fog-z220.local.univ-savoie.fr:5000 -H 'Content-Type: application/json' -d '{"mac_address":"00:80:C1:B2:D3:E3"}'
 @app.route("/", methods=["POST"])
 def index():
