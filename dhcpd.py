@@ -2,7 +2,9 @@
 
 from flask import Flask, jsonify, request, __version__
 import re
+import logging
 
+logging.basicConfig(filename="dhcpd_api.log", level=logging.DEBUG)
 
 app = Flask(__name__)
 print(f"Flask : {__version__}")
